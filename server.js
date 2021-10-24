@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 const Role = db.role;
 
-db.mongoose.connect(`mongodb+srv://${process.env.URI_MONGODB}`, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+db.mongoose.connect(process.env.URI_MONGODB, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Successfully connect to MongoDB.");
   initial();
 }).catch(err => {
